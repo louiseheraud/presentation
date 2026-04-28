@@ -37,6 +37,16 @@ export default function ParcoursNav() {
             )
           })}
         </nav>
+        <div className="flex justify-end">
+          <a
+            href="https://calendly.com/louiseh217/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-bold rounded-lg transition-colors whitespace-nowrap"
+          >
+            Réserver un créneau
+          </a>
+        </div>
       </div>
     </header>
   )
