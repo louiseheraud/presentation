@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={inter.className}>
-      <body className="flex h-screen overflow-hidden bg-gray-100">
+      <body className="flex h-screen overflow-hidden" style={{ background: '#f7f8fc' }}>
         <Sidebar />
         <main className="flex-1 overflow-y-auto">
           {children}
