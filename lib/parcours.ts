@@ -6,27 +6,23 @@ export type Program = {
 export type ServiceCard = {
   title: string
   description: string
-  emoji: string
 }
 
 export type Parcours = {
   id: string
   label: string
-  emoji: string
   intro: string
   programs: Program[]
   services: ServiceCard[]
   calendlyUrl: string
-  contactEmail: string
 }
 
 export const parcoursList: Parcours[] = [
   {
     id: 'post-bac',
     label: 'Post bac',
-    emoji: '🎓',
     intro:
-      "Vous visez une école de commerce ou une université internationale directement après le bac ? Je vous prépare aux entretiens de personnalité et à la constitution de votre dossier pour maximiser vos chances.",
+      "Vous visez une école de commerce ou une université internationale directement après le bac ? Je vous prépare à la constitution de votre dossier et aux entretiens de personnalité pour maximiser vos chances.",
     programs: [
       {
         label: 'Écoles de commerce post bac',
@@ -45,69 +41,60 @@ export const parcoursList: Parcours[] = [
     ],
     services: [
       {
-        title: 'Préparation aux entretiens de personnalité',
-        description:
-          "Simulation d'entretien, feedback précis et axes de progression pour chaque école visée.",
-        emoji: '🎙️',
+        title: 'Préparation des dossiers',
+        description: 'CV et lettre de motivation travaillés en amont pour mettre votre profil en valeur.',
       },
       {
-        title: 'Préparation des dossiers',
-        description: 'CV et lettre de motivation travaillés pour mettre votre profil en valeur.',
-        emoji: '📄',
+        title: 'Préparation aux entretiens de personnalité',
+        description: "Simulation d'entretien, feedback précis et axes de progression pour chaque école visée.",
       },
     ],
     calendlyUrl: 'https://calendly.com/REMPLACER/post-bac',
-    contactEmail: 'louiseh217@gmail.com',
   },
   {
     id: 'prepa',
     label: 'Prépa',
-    emoji: '📚',
     intro:
       "Vous préparez les concours des grandes écoles de commerce ? Je vous accompagne dans la préparation des entretiens de personnalité, spécifiques à chaque école, pour aborder l'oral avec confiance.",
     programs: [
       {
-        label: 'Grandes écoles préparées',
-        schools: ['HEC', 'ESSEC', 'ESCP', 'EDHEC', 'emlyon', 'Audencia', 'GEM', 'ICN', 'Montpellier BS', 'Rennes SB'],
+        label: 'Grandes écoles',
+        schools: ['HEC', 'ESSEC', 'ESCP', 'EDHEC', 'emlyon', 'Audencia', 'GEM', 'ICN', 'Montpellier BS', 'Rennes SB', 'TBS', 'Kedge', '...'],
       },
     ],
     services: [
       {
         title: 'Préparation aux entretiens de personnalité',
-        description:
-          "Préparation spécifique à chaque école : codes, attendus du jury, simulation en conditions réelles.",
-        emoji: '🎙️',
+        description: "Préparation spécifique à chaque école : codes, attendus du jury, simulation en conditions réelles.",
       },
     ],
     calendlyUrl: 'https://calendly.com/REMPLACER/prepa',
-    contactEmail: 'louiseh217@gmail.com',
   },
   {
     id: 'ast',
     label: 'Admissions parallèles',
-    emoji: '🔀',
     intro:
-      "Vous êtes en L2/L3 ou en école et souhaitez intégrer une grande école de commerce en admission parallèle (AST) ? Je vous aide à construire un dossier solide et à préparer vos oraux.",
+      "Vous êtes en L2/L3 ou en école et souhaitez intégrer une grande école en admission parallèle (AST) ? Je vous aide à construire un dossier solide et à préparer vos oraux.",
     programs: [
       {
-        label: 'Grandes écoles en AST',
-        schools: ['HEC', 'ESSEC', 'ESCP', 'EDHEC', 'emlyon', 'Audencia', 'GEM', 'ESCE', 'Excelia', 'Rennes SB'],
+        label: 'Grandes écoles de commerce',
+        schools: ['HEC', 'ESSEC', 'ESCP', 'EDHEC', 'emlyon', 'Audencia', 'GEM', 'ESCE', 'Excelia', 'Rennes SB', 'Kedge', 'TBS', '...'],
+      },
+      {
+        label: 'IAE',
+        schools: ['IAE Paris', 'IAE Lyon', 'IAE Bordeaux', 'IAE Strasbourg', 'IAE Nantes', '...'],
       },
     ],
     services: [
       {
-        title: 'Préparation aux entretiens de personnalité',
-        description:
-          "Simulation sur-mesure selon votre profil AST et les codes de chaque école.",
-        emoji: '🎙️',
+        title: 'Préparation des dossiers',
+        description: 'CV et lettre de motivation adaptés en amont aux exigences des admissions parallèles.',
       },
       {
-        title: 'Préparation des dossiers',
-        description: 'CV et lettre de motivation adaptés aux exigences des admissions parallèles.',
-        emoji: '📄',
+        title: 'Préparation aux entretiens de personnalité',
+        description: "Simulation sur-mesure selon votre profil AST et les codes de chaque école.",
       },
     ],
     calendlyUrl: 'https://calendly.com/REMPLACER/ast',
-    contactEmail: 'louiseh217@gmail.com',
   },
 ]

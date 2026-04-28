@@ -7,9 +7,8 @@ export default function ParcoursSection({ parcours }: { parcours: Parcours }) {
 
         {/* Intro */}
         <div className="mb-10">
-          <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full mb-4">
-            <span>{parcours.emoji}</span>
-            <span>{parcours.label}</span>
+          <div className="inline-block bg-indigo-50 text-indigo-600 text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full mb-4">
+            {parcours.label}
           </div>
           <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">{parcours.intro}</p>
         </div>
@@ -45,26 +44,19 @@ export default function ParcoursSection({ parcours }: { parcours: Parcours }) {
             </h3>
             {parcours.services.map((service, i) => (
               <div key={i} className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-                <div className="text-2xl mb-2">{service.emoji}</div>
                 <h4 className="font-bold text-gray-900 text-sm mb-1">{service.title}</h4>
                 <p className="text-xs text-gray-500 leading-relaxed">{service.description}</p>
               </div>
             ))}
 
-            <div className="flex items-center gap-4 mt-2 flex-wrap">
+            <div className="mt-2">
               <a
                 href={parcours.calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-bold px-5 py-3 rounded-xl transition-colors"
               >
-                📅 Réserver un créneau
-              </a>
-              <a
-                href={`mailto:${parcours.contactEmail}`}
-                className="text-sm text-gray-400 hover:text-gray-600 transition-colors"
-              >
-                Des questions ?
+                Réserver un créneau
               </a>
             </div>
           </div>

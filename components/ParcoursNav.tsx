@@ -20,7 +20,7 @@ export default function ParcoursNav() {
               onClick={() => scrollTo(p.id)}
               className="px-4 py-2 text-sm font-semibold rounded-lg text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 transition-colors whitespace-nowrap"
             >
-              {p.emoji} {p.label}
+              {p.label}
             </button>
           ))}
         </nav>
