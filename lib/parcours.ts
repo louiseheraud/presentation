@@ -49,7 +49,7 @@ export const parcoursList: Parcours[] = [
         description: "Simulation d'entretien, feedback précis et axes de progression pour chaque école visée.",
       },
     ],
-    calendlyUrl: 'https://calendly.com/REMPLACER/post-bac',
+    calendlyUrl: 'https://calendly.com/louiseh217/30min',
   },
   {
     id: 'prepa',
@@ -72,7 +72,7 @@ export const parcoursList: Parcours[] = [
         description: "Préparation spécifique à chaque école : codes, attendus du jury, simulation en conditions réelles.",
       },
     ],
-    calendlyUrl: 'https://calendly.com/REMPLACER/prepa',
+    calendlyUrl: 'https://calendly.com/louiseh217/30min',
   },
   {
     id: 'ast',
@@ -99,6 +99,6 @@ export const parcoursList: Parcours[] = [
         description: "Simulation sur-mesure selon votre profil AST et les codes de chaque école.",
       },
     ],
-    calendlyUrl: 'https://calendly.com/REMPLACER/ast',
+    calendlyUrl: 'https://calendly.com/louiseh217/30min',
   },
 ]
