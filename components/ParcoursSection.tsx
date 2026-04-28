@@ -20,7 +20,7 @@ export default function ParcoursSection({ parcours }: { parcours: Parcours }) {
           {parcours.programs.map((prog, i) => (
             <div key={i}>
               <h3 className="text-sm font-bold text-gray-700 mb-3">{prog.label}</h3>
-              <ul className="flex flex-col gap-2">
+              <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-2">
                 {prog.schools.map((school, j) => (
                   <li key={j} className="flex items-center gap-2 text-sm text-gray-500">
                     <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 flex-shrink-0" />

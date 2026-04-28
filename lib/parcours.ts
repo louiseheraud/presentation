@@ -58,8 +58,12 @@ export const parcoursList: Parcours[] = [
       "Vous préparez les concours des grandes écoles de commerce ? Je vous accompagne dans la préparation des entretiens de personnalité, spécifiques à chaque école, pour aborder l'oral avec confiance.",
     programs: [
       {
-        label: 'Grandes écoles',
-        schools: ['HEC', 'ESSEC', 'ESCP', 'EDHEC', 'emlyon', 'Audencia', 'GEM', 'ICN', 'Montpellier BS', 'Rennes SB', 'TBS', 'Kedge', '...'],
+        label: 'Grandes écoles (classement 2025)',
+        schools: [
+          'HEC', 'ESSEC', 'ESCP', 'EDHEC', 'emlyon', 'SKEMA',
+          'Audencia', 'GEM', 'Kedge', 'TBS', 'Rennes SB', 'Montpellier BS',
+          'ICN', 'BSB', 'ESC Clermont', 'Excelia', '...',
+        ],
       },
     ],
     services: [
