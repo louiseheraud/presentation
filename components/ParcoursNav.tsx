@@ -1,34 +1,41 @@
 'use client'
 
-import { parcoursList } from '@/lib/parcours'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+
+const navItems = [
+  { label: 'Accueil', href: '/' },
+  { label: 'Post bac', href: '/post-bac' },
+  { label: 'Prépa', href: '/prepa' },
+  { label: 'Admissions parallèles', href: '/ast' },
+]
 
 export default function ParcoursNav() {
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-  }
+  const pathname = usePathname()
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <div className="max-w-5xl mx-auto px-6 py-4 grid grid-cols-3 items-center">
-        <span className="font-black text-xl tracking-tight text-gray-900">
+        <Link href="/" className="font-black text-xl tracking-tight text-gray-900">
           Trem<span className="text-indigo-500">plin</span>
-        </span>
-        <nav className="flex items-center justify-center gap-2">
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="px-4 py-2 text-sm font-semibold rounded-lg text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 transition-colors whitespace-nowrap"
-          >
-            Accueil
-          </button>
-          {parcoursList.map((p) => (
-            <button
-              key={p.id}
-              onClick={() => scrollTo(p.id)}
-              className="px-4 py-2 text-sm font-semibold rounded-lg text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 transition-colors whitespace-nowrap"
-            >
-              {p.label}
-            </button>
-          ))}
+        </Link>
+        <nav className="flex items-center justify-center gap-1">
+          {navItems.map((item) => {
+            const active = pathname === item.href
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`px-4 py-2 text-sm font-semibold rounded-lg transition-colors whitespace-nowrap ${
+                  active
+                    ? 'text-indigo-600 bg-indigo-50'
+                    : 'text-gray-600 hover:text-indigo-600 hover:bg-indigo-50'
+                }`}
+              >
+                {item.label}
+              </Link>
+            )
+          })}
         </nav>
       </div>
     </header>
