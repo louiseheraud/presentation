@@ -40,4 +40,20 @@ describe('POST /api/admin/login', () => {
     expect(setCookie).toContain('admin_session')
     expect(setCookie).toContain(ADMIN_SESSION_TOKEN)
   })
+
+  it('returns 400 for malformed JSON', async () => {
+    const req = new NextRequest('http://localhost/api/admin/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: 'not json',
+    })
+    const res = await POST(req)
+    expect(res.status).toBe(400)
+  })
+
+  it('returns 401 for missing password field', async () => {
+    const req = makePostRequest({})
+    const res = await POST(req)
+    expect(res.status).toBe(401)
+  })
 })
