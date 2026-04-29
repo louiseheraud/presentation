@@ -22,3 +22,9 @@ npm-debug.log*
 
 # superpowers visual companion
 .superpowers/
+
+# test coverage
+coverage/
+
+# TypeScript build info
+tsconfig.tsbuildinfo
