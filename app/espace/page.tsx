@@ -44,7 +44,7 @@ export default function EspacePage() {
         Bonjour{firstName ? ` ${firstName}` : ''} 👋
       </h1>
       <p className="text-gray-500 text-sm mb-8">
-        Bienvenue dans ton espace Tremplin.
+        Bienvenue dans ton espace CapOral.
       </p>
 
       <div className="grid grid-cols-2 gap-4 max-w-2xl">

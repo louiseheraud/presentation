@@ -6,9 +6,9 @@ jest.mock('next/navigation', () => ({
 }))
 
 describe('AdminSidebar', () => {
-  it('renders Tremplin logo', () => {
+  it('renders CapOral logo', () => {
     render(<AdminSidebar />)
-    expect(screen.getByText('plin')).toBeInTheDocument()
+    expect(screen.getByText('Oral')).toBeInTheDocument()
   })
 
   it('renders nav links', () => {

@@ -23,7 +23,7 @@ export default function Sidebar() {
     <aside className="w-52 flex-shrink-0 bg-gray-900 flex flex-col h-full">
       <div className="px-5 py-6 border-b border-gray-800">
         <span className="text-white font-black text-lg tracking-tight">
-          Trem<span className="text-indigo-500">plin</span>
+          Cap<span className="text-indigo-500">Oral</span>
         </span>
       </div>
 

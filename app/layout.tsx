@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Tremplin — Coaching prépa',
+  title: 'CapOral — Coaching prépa',
   description: 'Sessions de coaching individuel pour étudiants en prépa : lettre de motivation, CV, entraînement aux oraux.',
 }
 

@@ -64,7 +64,7 @@ export default function ConnexionPage() {
     <div className="min-h-screen bg-[#f7f8fc] flex flex-col">
       <header className="px-8 py-5 bg-white border-b border-gray-100">
         <Link href="/" className="font-black text-xl tracking-tight text-gray-900">
-          Trem<span className="text-indigo-500">plin</span>
+          Cap<span className="text-indigo-500">Oral</span>
         </Link>
       </header>
 

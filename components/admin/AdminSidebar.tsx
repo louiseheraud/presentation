@@ -32,7 +32,7 @@ export default function AdminSidebar() {
           borderBottom: '1px solid #1f2937',
         }}
       >
-        Trem<span style={{ color: '#6366f1' }}>plin</span>
+        Cap<span style={{ color: '#6366f1' }}>Oral</span>
       </div>
 
       <nav style={{ flex: 1 }}>

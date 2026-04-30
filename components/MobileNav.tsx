@@ -16,7 +16,7 @@ export default function MobileNav() {
     <div className="md:hidden bg-gray-900 text-white flex flex-col flex-shrink-0">
       <div className="flex items-center justify-between px-5 py-4">
         <span className="font-black text-lg tracking-tight">
-          Trem<span className="text-indigo-500">plin</span>
+          Cap<span className="text-indigo-500">Oral</span>
         </span>
         <button onClick={() => setOpen(!open)} className="text-gray-400 hover:text-white text-2xl leading-none">
           {open ? '✕' : '☰'}

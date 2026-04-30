@@ -5,11 +5,10 @@ jest.mock('next/navigation', () => ({
   usePathname: () => '/oraux',
 }))
 
-test('affiche le logo Tremplin', () => {
+test('affiche le logo CapOral', () => {
   render(<Sidebar />)
-  // The logo is split across two spans ("Trem" + "plin"), so match via container text content
-  expect(screen.getByText(/Trem/i)).toBeInTheDocument()
-  expect(screen.getByText(/plin/i)).toBeInTheDocument()
+  expect(screen.getByText(/Cap/i)).toBeInTheDocument()
+  expect(screen.getByText(/Oral/i)).toBeInTheDocument()
 })
 
 test('affiche les 3 services dans la nav', () => {

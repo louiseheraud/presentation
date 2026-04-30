@@ -78,10 +78,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Pourquoi Tremplin */}
+        {/* Pourquoi CapOral */}
         <section className="py-16 px-6 bg-white">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-2">Pourquoi choisir Tremplin ?</h2>
+            <h2 className="text-2xl font-extrabold text-gray-900 mb-2">Pourquoi choisir CapOral ?</h2>
             <p className="text-gray-500 mb-10">Un coaching pensé pour vous faire progresser vite et durablement.</p>
             <div className="grid md:grid-cols-2 gap-6">
               {whyItems.map((item, i) => (

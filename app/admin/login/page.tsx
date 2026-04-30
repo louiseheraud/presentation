@@ -52,7 +52,7 @@ export default function LoginPage() {
         <div
           style={{ fontSize: 22, fontWeight: 900, color: '#111827', marginBottom: 4 }}
         >
-          Trem<span style={{ color: '#6366f1' }}>plin</span>
+          Cap<span style={{ color: '#6366f1' }}>Oral</span>
         </div>
         <div style={{ fontSize: 12, color: '#9ca3af', marginBottom: 24 }}>
           Espace administration

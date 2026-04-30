@@ -14,7 +14,7 @@ export default function EspaceLayout({ children }: { children: React.ReactNode }
     <div className="min-h-screen bg-[#f7f8fc] flex flex-col">
       <header className="bg-white border-b border-gray-100 px-8 py-4 flex items-center justify-between">
         <Link href="/" className="font-black text-xl tracking-tight text-gray-900">
-          Trem<span className="text-indigo-500">plin</span>
+          Cap<span className="text-indigo-500">Oral</span>
         </Link>
         <EspaceLogout />
       </header>
