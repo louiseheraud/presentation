@@ -34,7 +34,7 @@ export default function AgentPage() {
             .getPage(i + 1)
             .then((page) => page.getTextContent())
             .then((content) =>
-              content.items.map((item: { str: string }) => item.str).join(' ')
+              content.items.map((item) => ('str' in item ? item.str : '')).join(' ')
             )
         )
       )
