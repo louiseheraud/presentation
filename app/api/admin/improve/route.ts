@@ -46,6 +46,14 @@ Réponds en JSON avec ce format exact :
     return NextResponse.json({ error: 'Unexpected response from Claude' }, { status: 500 })
   }
 
-  const result = JSON.parse(content.text)
-  return NextResponse.json(result)
+  let jsonText = content.text.trim()
+  const fenceMatch = jsonText.match(/```(?:json)?\s*([\s\S]*?)```/)
+  if (fenceMatch) jsonText = fenceMatch[1].trim()
+
+  try {
+    const result = JSON.parse(jsonText)
+    return NextResponse.json(result)
+  } catch {
+    return NextResponse.json({ error: 'Failed to parse Claude response', raw: jsonText }, { status: 500 })
+  }
 }
