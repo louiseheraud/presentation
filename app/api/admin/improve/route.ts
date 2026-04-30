@@ -18,15 +18,28 @@ export async function POST(request: NextRequest) {
     .select('text, order')
     .order('order', { ascending: true })
 
+  const { data: examples } = await supabase
+    .from('cv_examples')
+    .select('label, before_text, after_text')
+    .order('created_at', { ascending: true })
+
   const rulesText =
     rules && rules.length > 0
       ? rules.map((r, i) => `${i + 1}. ${r.text}`).join('\n')
       : '(aucune règle définie)'
 
+  const examplesText =
+    examples && examples.length > 0
+      ? examples.map((ex) =>
+          `--- Exemple : ${ex.label} ---\nAVANT :\n${ex.before_text}\n\nAPRÈS :\n${ex.after_text}`
+        ).join('\n\n')
+      : ''
+
   const systemPrompt = `Tu es un assistant spécialisé dans l'amélioration de CVs et lettres de motivation pour les candidatures aux grandes écoles françaises.
 
 Voici les règles à appliquer impérativement :
 ${rulesText}
+${examplesText ? `\nVoici des exemples de CVs avant/après correction pour t'aider à comprendre le style attendu :\n\n${examplesText}` : ''}
 
 Réponds en JSON avec ce format exact :
 {

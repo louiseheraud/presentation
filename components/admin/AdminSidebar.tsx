@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 const navItems = [
   { label: 'Agent IA', href: '/admin/agent' },
   { label: 'Mes règles', href: '/admin/regles' },
+  { label: 'Mes exemples', href: '/admin/exemples' },
 ]
 
 export default function AdminSidebar() {
