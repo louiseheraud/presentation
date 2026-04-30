@@ -17,7 +17,7 @@ function makeRequest(pathname: string): NextRequest {
 describe('proxy - espace routes', () => {
   it('allows /espace/connexion through without a session', async () => {
     const res = await proxy(makeRequest('/espace/connexion'))
-    expect(res.status).not.toBe(307)
+    expect(res.status).toBe(200)
   })
 
   it('redirects /espace to /espace/connexion when no session', async () => {
