@@ -18,6 +18,7 @@ jest.mock('@/lib/supabase-browser', () => ({
 describe('EspaceLogout', () => {
   beforeEach(() => {
     mockPush.mockClear()
+    mockRefresh.mockClear()
     mockSignOut.mockClear()
   })
 
@@ -32,6 +33,7 @@ describe('EspaceLogout', () => {
     await waitFor(() => {
       expect(mockSignOut).toHaveBeenCalled()
       expect(mockPush).toHaveBeenCalledWith('/')
+      expect(mockRefresh).toHaveBeenCalled()
     })
   })
 })
