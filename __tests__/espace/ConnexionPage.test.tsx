@@ -10,10 +10,14 @@ jest.mock('@/lib/supabase-browser', () => ({
   createSupabaseBrowser: () => ({
     auth: {
       signInWithPassword: jest.fn().mockResolvedValue({ error: null }),
-      signUp: jest.fn().mockResolvedValue({ error: null }),
     },
   }),
 }))
+
+global.fetch = jest.fn().mockResolvedValue({
+  ok: true,
+  json: async () => ({ ok: true }),
+}) as jest.Mock
 
 describe('ConnexionPage', () => {
   it('renders connexion tab by default with email and password fields', () => {

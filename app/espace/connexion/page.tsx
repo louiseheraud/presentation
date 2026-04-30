@@ -30,13 +30,19 @@ export default function ConnexionPage() {
           setError('Les mots de passe ne correspondent pas.')
           return
         }
-        const { error } = await supabase.auth.signUp({ email, password })
-        if (error) {
-          setError(
-            error.code === 'user_already_exists'
-              ? 'Un compte existe déjà avec cet email.'
-              : error.message
-          )
+        const res = await fetch('/api/espace/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        })
+        const data = await res.json()
+        if (!res.ok) {
+          setError(data.error ?? 'Une erreur est survenue.')
+          return
+        }
+        const { error: signInError } = await supabase.auth.signInWithPassword({ email, password })
+        if (signInError) {
+          setError(signInError.message)
           return
         }
       } else {
