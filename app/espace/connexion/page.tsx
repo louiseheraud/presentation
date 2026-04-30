@@ -22,35 +22,36 @@ export default function ConnexionPage() {
     setError('')
     setLoading(true)
 
-    const supabase = createSupabaseBrowser()
+    try {
+      const supabase = createSupabaseBrowser()
 
-    if (tab === 'inscription') {
-      if (password !== confirm) {
-        setError('Les mots de passe ne correspondent pas.')
-        setLoading(false)
-        return
+      if (tab === 'inscription') {
+        if (password !== confirm) {
+          setError('Les mots de passe ne correspondent pas.')
+          return
+        }
+        const { error } = await supabase.auth.signUp({ email, password })
+        if (error) {
+          setError(
+            error.code === 'user_already_exists'
+              ? 'Un compte existe déjà avec cet email.'
+              : error.message
+          )
+          return
+        }
+      } else {
+        const { error } = await supabase.auth.signInWithPassword({ email, password })
+        if (error) {
+          setError('Email ou mot de passe incorrect.')
+          return
+        }
       }
-      const { error } = await supabase.auth.signUp({ email, password })
-      if (error) {
-        setError(
-          error.message === 'User already registered'
-            ? 'Un compte existe déjà avec cet email.'
-            : error.message
-        )
-        setLoading(false)
-        return
-      }
-    } else {
-      const { error } = await supabase.auth.signInWithPassword({ email, password })
-      if (error) {
-        setError('Email ou mot de passe incorrect.')
-        setLoading(false)
-        return
-      }
+
+      router.push('/espace')
+      router.refresh()
+    } finally {
+      setLoading(false)
     }
-
-    router.push('/espace')
-    router.refresh()
   }
 
   return (
@@ -66,6 +67,7 @@ export default function ConnexionPage() {
           <div className="flex gap-1 mb-8 bg-gray-100 rounded-lg p-1">
             {(['connexion', 'inscription'] as Tab[]).map((t) => (
               <button
+                type="button"
                 key={t}
                 onClick={() => { setTab(t); setError('') }}
                 className={`flex-1 py-2 text-sm font-semibold rounded-md transition-colors ${
