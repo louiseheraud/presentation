@@ -16,6 +16,7 @@ export default function ConnexionPage() {
   const [confirm, setConfirm] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [emailSent, setEmailSent] = useState(false)
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -30,21 +31,17 @@ export default function ConnexionPage() {
           setError('Les mots de passe ne correspondent pas.')
           return
         }
-        const res = await fetch('/api/espace/signup', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, password }),
+        const { error } = await supabase.auth.signUp({
+          email,
+          password,
+          options: { emailRedirectTo: window.location.origin + '/auth/callback' },
         })
-        const data = await res.json()
-        if (!res.ok) {
-          setError(data.error ?? 'Une erreur est survenue.')
+        if (error) {
+          setError(error.message)
           return
         }
-        const { error: signInError } = await supabase.auth.signInWithPassword({ email, password })
-        if (signInError) {
-          setError(signInError.message)
-          return
-        }
+        setEmailSent(true)
+        return
       } else {
         const { error } = await supabase.auth.signInWithPassword({ email, password })
         if (error) {
@@ -87,6 +84,12 @@ export default function ConnexionPage() {
             ))}
           </div>
 
+          {emailSent ? (
+            <div className="text-center py-4">
+              <p className="text-sm font-semibold text-gray-800 mb-1">Vérifie ton email !</p>
+              <p className="text-sm text-gray-500">Un lien de confirmation t&apos;a été envoyé à <strong>{email}</strong>.</p>
+            </div>
+          ) : (
           <form role="form" onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
@@ -144,6 +147,7 @@ export default function ConnexionPage() {
                 : 'Créer mon compte'}
             </button>
           </form>
+          )}
         </div>
       </main>
     </div>
