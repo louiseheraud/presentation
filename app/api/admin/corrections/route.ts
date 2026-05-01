@@ -6,10 +6,11 @@ import { Resend } from 'resend'
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function GET() {
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from('corrections')
     .select('*')
     .order('created_at', { ascending: false })
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 })
   return NextResponse.json(data ?? [])
 }
 
@@ -32,7 +33,7 @@ export async function POST(request: NextRequest) {
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
 
-  await resend.emails.send({
+  const { error: emailError } = await resend.emails.send({
     from: 'CapOral <onboarding@resend.dev>',
     to: student_email,
     subject: `Nouvelle correction disponible sur CapOral`,
@@ -43,6 +44,9 @@ export async function POST(request: NextRequest) {
       <p>À bientôt,<br/>L'équipe CapOral</p>
     `,
   })
+  if (emailError) {
+    console.error('Resend error:', emailError)
+  }
 
   return NextResponse.json({ ok: true })
 }

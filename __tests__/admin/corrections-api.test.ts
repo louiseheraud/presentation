@@ -21,7 +21,7 @@ jest.mock('@/lib/supabase', () => ({
     from: jest.fn().mockReturnValue({
       select: jest.fn().mockReturnThis(),
       order: jest.fn().mockResolvedValue({ data: [], error: null }),
-      eq: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockResolvedValue({ data: null, error: null }),
       insert: jest.fn().mockResolvedValue({ data: null, error: null }),
       delete: jest.fn().mockReturnThis(),
       single: jest.fn().mockResolvedValue({ data: null, error: null }),
@@ -29,11 +29,10 @@ jest.mock('@/lib/supabase', () => ({
   },
 }))
 
+const mockEmailSend = jest.fn().mockResolvedValue({ data: { id: 'email-1' }, error: null })
 jest.mock('resend', () => ({
   Resend: jest.fn().mockImplementation(() => ({
-    emails: {
-      send: jest.fn().mockResolvedValue({ data: { id: 'email-1' }, error: null }),
-    },
+    emails: { send: mockEmailSend },
   })),
 }))
 
@@ -75,6 +74,9 @@ describe('POST /api/admin/corrections', () => {
     })
     const res = await POST(req)
     expect(res.status).toBe(200)
+    expect(mockEmailSend).toHaveBeenCalledWith(
+      expect.objectContaining({ to: 'alice@test.com' })
+    )
   })
 })
 
