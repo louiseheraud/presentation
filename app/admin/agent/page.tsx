@@ -74,26 +74,32 @@ export default function AgentPage() {
 
   async function handleSend() {
     if (!selectedStudent || !sendLabel.trim() || !result) return
-    setSending(true)
     const student = students.find((s) => s.id === selectedStudent)
     if (!student) return
+    setSending(true)
 
     const inputText = mode === 'text' ? text : '[PDF uploadé]'
 
-    await fetch('/api/admin/corrections', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        student_id: student.id,
-        student_email: student.email,
-        type: sendType,
-        label: sendLabel.trim(),
-        before_text: inputText,
-        after_text: result.rewritten,
-      }),
-    })
-    setSending(false)
-    setSent(true)
+    try {
+      const res = await fetch('/api/admin/corrections', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          student_id: student.id,
+          student_email: student.email,
+          type: sendType,
+          label: sendLabel.trim(),
+          before_text: inputText,
+          after_text: result.rewritten,
+        }),
+      })
+      if (!res.ok) throw new Error('Erreur serveur')
+      setSent(true)
+    } catch {
+      setError("Erreur lors de l'envoi. Réessaie.")
+    } finally {
+      setSending(false)
+    }
   }
 
   const btnStyle = (active: boolean) => ({
