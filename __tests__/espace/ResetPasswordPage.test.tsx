@@ -25,7 +25,7 @@ describe('ResetPasswordPage', () => {
     fireEvent.change(screen.getAllByPlaceholderText('••••••••')[0], { target: { value: 'abcdef' } })
     fireEvent.change(screen.getAllByPlaceholderText('••••••••')[1], { target: { value: 'xyz' } })
     await act(async () => {
-      fireEvent.submit(screen.getByRole('form') ?? document.querySelector('form')!)
+      fireEvent.submit(document.querySelector('form')!)
     })
     expect(screen.getByText(/ne correspondent pas/i)).toBeTruthy()
   })

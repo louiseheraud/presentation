@@ -1,12 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { createSupabaseBrowser } from '@/lib/supabase-browser'
 
 export default function ResetPasswordPage() {
-  const router = useRouter()
   const [password, setPassword] = useState('')
   const [confirm, setConfirm] = useState('')
   const [error, setError] = useState('')
@@ -33,7 +31,6 @@ export default function ResetPasswordPage() {
         return
       }
       setDone(true)
-      setTimeout(() => router.push('/espace'), 2000)
     } finally {
       setLoading(false)
     }
@@ -52,7 +49,10 @@ export default function ResetPasswordPage() {
           {done ? (
             <div className="text-center py-4">
               <p className="text-sm font-semibold text-gray-800 mb-1">Mot de passe mis à jour !</p>
-              <p className="text-sm text-gray-500">Tu vas être redirigé vers ton espace...</p>
+              <p className="text-sm text-gray-500 mb-4">Ton mot de passe a bien été modifié.</p>
+              <Link href="/espace" className="text-sm text-indigo-500 hover:underline font-semibold">
+                Accéder à mon espace →
+              </Link>
             </div>
           ) : (
             <>
