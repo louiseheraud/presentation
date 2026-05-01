@@ -17,6 +17,8 @@ export default function ConnexionPage() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const [emailSent, setEmailSent] = useState(false)
+  const [resetMode, setResetMode] = useState(false)
+  const [resetSent, setResetSent] = useState(false)
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -57,6 +59,25 @@ export default function ConnexionPage() {
     }
   }
 
+  async function handleReset(e: React.FormEvent) {
+    e.preventDefault()
+    setError('')
+    setLoading(true)
+    try {
+      const supabase = createSupabaseBrowser()
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: window.location.origin + '/auth/callback?next=/espace/reset-password',
+      })
+      if (error) {
+        setError(error.message)
+        return
+      }
+      setResetSent(true)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <div className="min-h-screen bg-[#f7f8fc] flex flex-col">
       <header className="px-8 py-5 bg-white border-b border-gray-100">
@@ -89,6 +110,48 @@ export default function ConnexionPage() {
               <p className="text-sm font-semibold text-gray-800 mb-1">Vérifie ton email !</p>
               <p className="text-sm text-gray-500">Un lien de confirmation t&apos;a été envoyé à <strong>{email}</strong>.</p>
             </div>
+          ) : resetSent ? (
+            <div className="text-center py-4">
+              <p className="text-sm font-semibold text-gray-800 mb-1">Email envoyé !</p>
+              <p className="text-sm text-gray-500">Consulte ta boîte mail pour réinitialiser ton mot de passe.</p>
+              <button
+                type="button"
+                onClick={() => { setResetMode(false); setResetSent(false); setError('') }}
+                className="mt-4 text-xs text-indigo-500 hover:underline"
+              >
+                Retour à la connexion
+              </button>
+            </div>
+          ) : resetMode ? (
+            <form onSubmit={handleReset} className="flex flex-col gap-4">
+              <p className="text-sm text-gray-600">Saisis ton email pour recevoir un lien de réinitialisation.</p>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                  placeholder="ton@email.com"
+                />
+              </div>
+              {error && <p className="text-sm text-red-600">{error}</p>}
+              <button
+                type="submit"
+                disabled={loading}
+                className="mt-2 w-full py-2.5 bg-indigo-500 hover:bg-indigo-600 disabled:opacity-50 text-white text-sm font-bold rounded-lg transition-colors"
+              >
+                {loading ? '...' : 'Envoyer le lien'}
+              </button>
+              <button
+                type="button"
+                onClick={() => { setResetMode(false); setError('') }}
+                className="text-xs text-indigo-500 hover:underline text-center"
+              >
+                Retour à la connexion
+              </button>
+            </form>
           ) : (
           <form role="form" onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div>
@@ -146,6 +209,16 @@ export default function ConnexionPage() {
                 ? 'Se connecter'
                 : 'Créer mon compte'}
             </button>
+
+            {tab === 'connexion' && (
+              <button
+                type="button"
+                onClick={() => { setResetMode(true); setError('') }}
+                className="text-xs text-indigo-500 hover:underline text-center"
+              >
+                Mot de passe oublié ?
+              </button>
+            )}
           </form>
           )}
         </div>

@@ -1,17 +1,26 @@
 // __tests__/espace/ConnexionPage.test.tsx
-import { render, screen, fireEvent } from '@testing-library/react'
-import ConnexionPage from '@/app/espace/connexion/page'
+import { act, render, screen, fireEvent } from '@testing-library/react'
+
+const mockSignInWithPassword = jest.fn()
+const mockSignUp = jest.fn()
+const mockResetPasswordForEmail = jest.fn()
+const mockPush = jest.fn()
+const mockRefresh = jest.fn()
 
 jest.mock('next/navigation', () => ({
-  useRouter: () => ({ push: jest.fn(), refresh: jest.fn() }),
+  useRouter: () => ({ push: mockPush, refresh: mockRefresh }),
+}))
+
+const mockCreateSupabaseBrowser = jest.fn(() => ({
+  auth: {
+    signInWithPassword: mockSignInWithPassword,
+    signUp: mockSignUp,
+    resetPasswordForEmail: mockResetPasswordForEmail,
+  },
 }))
 
 jest.mock('@/lib/supabase-browser', () => ({
-  createSupabaseBrowser: () => ({
-    auth: {
-      signInWithPassword: jest.fn().mockResolvedValue({ error: null }),
-    },
-  }),
+  get createSupabaseBrowser() { return mockCreateSupabaseBrowser },
 }))
 
 global.fetch = jest.fn().mockResolvedValue({
@@ -19,7 +28,11 @@ global.fetch = jest.fn().mockResolvedValue({
   json: async () => ({ ok: true }),
 }) as jest.Mock
 
+import ConnexionPage from '@/app/espace/connexion/page'
+
 describe('ConnexionPage', () => {
+  beforeEach(() => { jest.clearAllMocks() })
+
   it('renders connexion tab by default with email and password fields', () => {
     render(<ConnexionPage />)
     expect(screen.getByText('Connexion')).toBeTruthy()
@@ -34,6 +47,7 @@ describe('ConnexionPage', () => {
   })
 
   it('shows error when passwords do not match on inscription', async () => {
+    mockSignUp.mockResolvedValue({ error: null })
     render(<ConnexionPage />)
     fireEvent.click(screen.getByText('Créer un compte'))
     fireEvent.change(screen.getByPlaceholderText('ton@email.com'), {
@@ -44,5 +58,28 @@ describe('ConnexionPage', () => {
     fireEvent.change(passwordFields[1], { target: { value: 'password2' } })
     fireEvent.submit(screen.getByRole('form'))
     expect(await screen.findByText('Les mots de passe ne correspondent pas.')).toBeTruthy()
+  })
+
+  it('shows forgot password form when link clicked', async () => {
+    render(<ConnexionPage />)
+    await act(async () => {
+      fireEvent.click(screen.getByText('Mot de passe oublié ?'))
+    })
+    expect(screen.getByText(/Saisis ton email/i)).toBeTruthy()
+  })
+
+  it('shows reset sent message after successful reset', async () => {
+    mockResetPasswordForEmail.mockResolvedValue({ error: null })
+    render(<ConnexionPage />)
+    await act(async () => {
+      fireEvent.click(screen.getByText('Mot de passe oublié ?'))
+    })
+    await act(async () => {
+      fireEvent.change(screen.getByPlaceholderText('ton@email.com'), {
+        target: { value: 'test@test.com' },
+      })
+      fireEvent.submit(screen.getByText('Envoyer le lien').closest('form')!)
+    })
+    expect(screen.getByText(/Email envoyé/i)).toBeTruthy()
   })
 })
