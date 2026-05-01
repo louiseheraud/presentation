@@ -3,8 +3,6 @@ import type { NextRequest } from 'next/server'
 import { supabase } from '@/lib/supabase'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function GET() {
   const { data, error } = await supabase
     .from('corrections')
@@ -33,6 +31,7 @@ export async function POST(request: NextRequest) {
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
 
+  const resend = new Resend(process.env.RESEND_API_KEY)
   const { error: emailError } = await resend.emails.send({
     from: 'CapOral <onboarding@resend.dev>',
     to: student_email,
