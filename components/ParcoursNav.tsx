@@ -16,11 +16,11 @@ export default function ParcoursNav() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-      <div className="w-full px-8 py-4 grid grid-cols-3 items-center">
-        <Link href="/" className="font-black text-xl tracking-tight text-gray-900">
+      <div className="w-full px-8 py-4 flex items-center gap-6">
+        <Link href="/" className="font-black text-xl tracking-tight text-gray-900 flex-shrink-0">
           Cap<span className="text-indigo-500">Oral</span>
         </Link>
-        <nav className="flex items-center justify-center gap-1">
+        <nav className="flex items-center gap-1 flex-1">
           {navItems.map((item) => {
             const active = pathname === item.href
             return (

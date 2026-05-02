@@ -15,7 +15,7 @@ const whyItems = [
   {
     icon: '🏆',
     title: '+400 étudiants accompagnés',
-    description: 'Une large expérience sur la préparation des dossiers et des oraux pour les grandes écoles, en France et à l'international, pour vous préparer avec les codes que les jurys attendent.',
+    description: "Une large expérience sur la préparation des dossiers et des oraux pour les grandes écoles, en France et à l'international, pour vous préparer avec les codes que les jurys attendent.",
   },
 ]
 
