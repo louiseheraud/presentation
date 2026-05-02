@@ -119,19 +119,16 @@ export default function Home() {
         </section>
 
         {/* CTA */}
-        <section className="py-16 px-6 bg-white">
-          <div className="max-w-xl mx-auto text-center">
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-2">Prêt(e) à commencer ?</h2>
-            <p className="text-gray-500 mb-8">La première séance est gratuite.</p>
-            <Link
-              href="https://calendly.com/louiseh217/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-indigo-500 hover:bg-indigo-600 text-white font-bold rounded-xl transition-colors"
-            >
-              Réserver ma séance découverte
-            </Link>
-          </div>
+        <section className="py-16 px-6 text-center">
+          <p className="text-gray-500 mb-6">Prêt(e) à commencer ? La première séance est gratuite.</p>
+          <Link
+            href="https://calendly.com/louiseh217/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-bold rounded-xl transition-colors"
+          >
+            Réserver ma séance découverte →
+          </Link>
         </section>
 
       </main>
