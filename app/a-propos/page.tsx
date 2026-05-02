@@ -16,12 +16,12 @@ export default function AProposPage() {
           <div className="flex items-center gap-6 mb-6">
             <Image
               src="/profile-pic-2.png"
-              alt="Louise Heraud"
+              alt="Louise"
               width={96}
               height={96}
               className="rounded-full object-cover w-24 h-24 flex-shrink-0"
             />
-            <h1 className="text-3xl font-extrabold text-gray-900">Louise Heraud</h1>
+            <h1 className="text-3xl font-extrabold text-gray-900">Louise</h1>
           </div>
           <div className="flex flex-col gap-4 text-gray-600 leading-relaxed">
             <p>
