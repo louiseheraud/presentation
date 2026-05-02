@@ -71,6 +71,10 @@ export const parcoursList: Parcours[] = [
         title: 'Préparation aux oraux',
         description: 'Structure et travail du pitch, entraînement sur les questions classiques et de niche, simulation en conditions réelles, feedback.',
       },
+      {
+        title: 'Dossiers spécifiques',
+        description: "Certaines écoles demandent un travail en amont de l'oral : CV projectif (SKEMA), réponses à des questions écrites (ESCP). Préparation adaptée à chaque format.",
+      },
     ],
     calendlyUrl: 'https://calendly.com/louiseh217/30min',
   },
