@@ -12,7 +12,6 @@ export default function MentionsLegalesPage() {
           <section>
             <h2 className="font-bold text-gray-900 mb-2">Éditeur du site</h2>
             <p>CapOral — Louise Heraud</p>
-            <p>Auto-entrepreneur</p>
             <p>Contact : <a href="mailto:louiseh217@gmail.com" className="text-indigo-500 hover:underline">louiseh217@gmail.com</a></p>
           </section>
 
