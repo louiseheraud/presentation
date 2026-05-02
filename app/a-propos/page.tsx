@@ -25,9 +25,6 @@ export default function AProposPage() {
           </div>
           <div className="flex flex-col gap-4 text-gray-600 leading-relaxed">
             <p>
-              Après <strong className="text-gray-900">14 ans à l'étranger</strong>, j'ai développé une vision internationale des candidatures et une capacité à m'adapter à des profils très différents.
-            </p>
-            <p>
               Depuis <strong className="text-gray-900">plus de 5 ans</strong>, j'accompagne des étudiants dans leur préparation aux oraux et dossiers — post bac, prépa et admissions parallèles (AST). J'ai travaillé avec <strong className="text-gray-900">plus de 400 étudiants</strong>, avec un taux de réussite de <strong className="text-gray-900">95 %</strong>.
             </p>
             <p>
