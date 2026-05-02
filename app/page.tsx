@@ -21,19 +21,23 @@ const whyItems = [
 
 const testimonials = [
   {
-    name: 'Sophie M.',
+    name: 'Sophie',
+    school: 'EDHEC',
     text: 'Grâce aux simulations d\'entretien, j\'ai intégré HEC dans les meilleures conditions. Le feedback était précis et vraiment utile.',
   },
   {
-    name: 'Thomas L.',
+    name: 'Thomas',
+    school: 'KEDGE Bachelor',
     text: 'Ma lettre de motivation a été entièrement retravaillée — j\'ai été accepté à KEDGE Bachelor dès le premier tour.',
   },
   {
-    name: 'Camille D.',
+    name: 'Camille',
+    school: 'emlyon',
     text: 'J\'avais peur des oraux. Après deux sessions d\'entraînement, j\'y allais avec confiance. Je recommande à 100%.',
   },
   {
-    name: 'Hugo R.',
+    name: 'Hugo',
+    school: 'emlyon',
     text: 'Préparation AST très sérieuse, adaptée aux exigences de chaque école. J\'ai décroché emlyon en admission parallèle.',
   },
 ]
@@ -97,13 +101,17 @@ export default function Home() {
         {/* Avis clients */}
         <section className="py-16 px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-2">Ils ont été accompagnés</h2>
+            <h2 className="text-2xl font-extrabold text-gray-900 mb-2">Les élèves témoignent</h2>
             <p className="text-gray-500 mb-10">Ce que disent les étudiants après leurs sessions.</p>
             <div className="grid md:grid-cols-2 gap-6">
               {testimonials.map((t, i) => (
                 <div key={i} className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+                  <div className="text-yellow-400 text-sm mb-3">★★★★★</div>
                   <p className="text-sm text-gray-600 leading-relaxed mb-4">"{t.text}"</p>
-                  <p className="text-sm font-bold text-gray-900">{t.name}</p>
+                  <div>
+                    <p className="text-sm font-bold text-gray-900">{t.name}</p>
+                    <p className="text-xs text-indigo-500 font-semibold">{t.school}</p>
+                  </div>
                 </div>
               ))}
             </div>
