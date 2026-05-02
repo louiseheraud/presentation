@@ -8,6 +8,7 @@ const navItems = [
   { label: 'Post bac', href: '/post-bac' },
   { label: 'Prépa', href: '/prepa' },
   { label: 'Admissions parallèles', href: '/ast' },
+  { label: 'À propos', href: '/a-propos' },
 ]
 
 export default function ParcoursNav() {

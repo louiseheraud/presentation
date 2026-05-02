@@ -3,20 +3,19 @@ import ParcoursNav from '@/components/ParcoursNav'
 
 const whyItems = [
   {
-    title: 'Méthodique',
-    description: 'Une préparation structurée étape par étape : dossier, puis entraînement oral, puis débriefing. Rien n\'est laissé au hasard.',
+    icon: '🎯',
+    title: 'Préparation méthodique',
+    description: 'Oraux, CV, lettres de motivation — une méthode structurée étape par étape pour aborder chaque partie de votre candidature avec clarté.',
   },
   {
-    title: 'Sur mesure',
-    description: 'Chaque session est adaptée à votre profil, à l\'école visée et aux attendus spécifiques du jury.',
+    icon: '✨',
+    title: 'Séances personnalisées',
+    description: 'Chaque séance s\'adapte à votre profil, à l\'école visée et à vos points de progression. Un coaching pour booster votre confiance, pas un cours générique.',
   },
   {
-    title: 'Confiance retrouvée',
-    description: 'L\'objectif n\'est pas seulement de vous préparer, c\'est de vous faire arriver serein(e) le jour J.',
-  },
-  {
-    title: 'Expertise terrain',
-    description: 'Une connaissance précise des codes de chaque école, construite sur l\'expérience des concours et des admissions.',
+    icon: '🏆',
+    title: '+400 étudiants accompagnés',
+    description: 'Une expérience concrète sur les dossiers et les oraux des grandes écoles, pour vous préparer avec les codes que les jurys attendent vraiment.',
   },
 ]
 
@@ -83,9 +82,10 @@ export default function Home() {
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl font-extrabold text-gray-900 mb-2">Pourquoi choisir CapOral ?</h2>
             <p className="text-gray-500 mb-10">Un coaching pensé pour vous faire progresser vite et durablement.</p>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               {whyItems.map((item, i) => (
                 <div key={i} className="rounded-2xl border border-gray-100 p-6">
+                  <div className="text-2xl mb-4">{item.icon}</div>
                   <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
                   <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
                 </div>
