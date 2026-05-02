@@ -45,7 +45,7 @@ export default function ParcoursNav() {
             rel="noopener noreferrer"
             className="px-4 py-2 bg-white border border-indigo-300 hover:bg-indigo-50 text-indigo-600 text-sm font-bold rounded-lg transition-colors whitespace-nowrap"
           >
-            Réserver un créneau
+            Réserver ma séance découverte
           </Link>
           <Link
             href="/espace"

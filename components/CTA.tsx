@@ -9,7 +9,7 @@ export default function CTA({ service }: { service: Service }) {
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-bold px-5 py-3 rounded-xl transition-colors"
       >
-        📅 Réserver un créneau
+        Réserver ma séance découverte
       </a>
       <a
         href={`mailto:${service.contactEmail}`}

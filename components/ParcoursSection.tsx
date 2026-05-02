@@ -52,15 +52,15 @@ export default function ParcoursSection({ parcours }: { parcours: Parcours }) {
 
       {/* CTA */}
       <section className="text-center py-10 bg-white rounded-2xl border border-gray-100 shadow-sm">
-        <h2 className="text-2xl font-extrabold text-gray-900 mb-3">Prêt(e) à vous lancer ?</h2>
-        <p className="text-gray-500 mb-8">Réservez un créneau directement dans mon agenda — c'est confirmé instantanément.</p>
+        <h2 className="text-2xl font-extrabold text-gray-900 mb-2">Prêt(e) à commencer ?</h2>
+        <p className="text-gray-500 mb-8">La première séance est gratuite.</p>
         <a
           href={parcours.calendlyUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white font-bold px-8 py-4 rounded-xl transition-colors text-base"
         >
-          Réserver un créneau
+          Réserver ma séance découverte
         </a>
       </section>
 
