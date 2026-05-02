@@ -10,7 +10,7 @@ const whyItems = [
   {
     icon: '✨',
     title: 'Séances personnalisées',
-    description: 'Chaque séance s\'adapte à votre profil, à l\'école visée et à vos points de progression. Un coaching pour booster votre confiance, pas un cours générique.',
+    description: 'Chaque séance s\'adapte à votre profil, à l\'école visée et à vos points de progression. Un coaching pour booster votre confiance.',
   },
   {
     icon: '🏆',
