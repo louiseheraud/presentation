@@ -41,12 +41,12 @@ export const parcoursList: Parcours[] = [
     ],
     services: [
       {
-        title: 'Préparation des dossiers',
-        description: 'CV et lettre de motivation travaillés en amont pour mettre votre profil en valeur.',
+        title: 'Dossier — CV & Lettre de motivation',
+        description: 'Travail sur votre CV et votre lettre de motivation : structure, contenu, formulation. Un dossier qui reflète votre profil.',
       },
       {
-        title: 'Préparation aux entretiens de personnalité',
-        description: "Simulation d'entretien, feedback précis et axes de progression pour chaque école visée.",
+        title: 'Préparation aux oraux',
+        description: 'Structure et travail du pitch, entraînement sur les questions classiques et de niche, simulation en conditions réelles, feedback.',
       },
     ],
     calendlyUrl: 'https://calendly.com/louiseh217/30min',
@@ -68,8 +68,8 @@ export const parcoursList: Parcours[] = [
     ],
     services: [
       {
-        title: 'Préparation aux entretiens de personnalité',
-        description: "Préparation spécifique à chaque école : codes, attendus du jury, simulation en conditions réelles.",
+        title: 'Préparation aux oraux',
+        description: 'Structure et travail du pitch, entraînement sur les questions classiques et de niche, simulation en conditions réelles, feedback.',
       },
     ],
     calendlyUrl: 'https://calendly.com/louiseh217/30min',
@@ -91,12 +91,12 @@ export const parcoursList: Parcours[] = [
     ],
     services: [
       {
-        title: 'Préparation des dossiers',
-        description: 'CV et lettre de motivation adaptés en amont aux exigences des admissions parallèles.',
+        title: 'Dossier — CV & Lettre de motivation',
+        description: 'Travail sur votre CV et votre lettre de motivation : structure, contenu, formulation. Un dossier qui reflète votre profil.',
       },
       {
-        title: 'Préparation aux entretiens de personnalité',
-        description: "Simulation sur-mesure selon votre profil AST et les codes de chaque école.",
+        title: 'Préparation aux oraux',
+        description: 'Structure et travail du pitch, entraînement sur les questions classiques et de niche, simulation en conditions réelles, feedback.',
       },
     ],
     calendlyUrl: 'https://calendly.com/louiseh217/30min',

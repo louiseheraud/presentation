@@ -60,9 +60,6 @@ export default function ParcoursSection({ parcours }: { parcours: Parcours }) {
           <div className="flex flex-col gap-4">
             {parcours.services.map((service, i) => (
               <div key={i} className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
-                <div className="text-xs font-bold text-indigo-500 uppercase tracking-wider mb-2">
-                  Étape {i + 1}
-                </div>
                 <h3 className="font-bold text-gray-900 mb-2">{service.title}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed">{service.description}</p>
               </div>
