@@ -45,7 +45,7 @@ const testimonials = [
 const parcours = [
   { label: 'Post bac', href: '/post-bac', description: 'Écoles de commerce et programmes internationaux après le bac.' },
   { label: 'Prépa', href: '/prepa', description: 'Entretiens de personnalité pour les concours grandes écoles.' },
-  { label: 'Admissions parallèles', href: '/ast', description: 'AST grandes écoles et IAE depuis une L2/L3 ou une école.' },
+  { label: 'AST', href: '/ast', description: 'AST grandes écoles et IAE depuis une L2/L3 ou une école.' },
 ]
 
 export default function Home() {
