@@ -42,7 +42,7 @@ export const parcoursList: Parcours[] = [
       },
       {
         label: 'Programmes internationaux',
-        schools: ['UCL', 'LSE', 'Warwick', 'IE Madrid', 'Bocconi', 'McGill'],
+        schools: ['IE Madrid', 'ESADE Barcelona', 'University of Essex', 'Oxford', 'Cambridge', '...'],
       },
     ],
     services: [
