@@ -21,8 +21,11 @@ export default function Footer() {
           <div className="flex flex-col gap-2">
             {[
               { label: 'Accueil', href: '/' },
+              { label: 'Post bac', href: '/post-bac' },
+              { label: 'Prépa', href: '/prepa' },
+              { label: 'AST', href: '/ast' },
               { label: 'À propos', href: '/a-propos' },
-              { label: 'Réserver ma séance découverte', href: 'https://calendly.com/louiseh217/30min' },
+              { label: 'Réserver une séance', href: 'https://calendly.com/louiseh217' },
             ].map((item) => (
               <Link
                 key={item.href}
