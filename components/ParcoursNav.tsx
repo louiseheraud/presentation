@@ -16,10 +16,12 @@ export default function ParcoursNav() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-      <div className="w-full px-8 py-4 flex items-center justify-between">
-        <Link href="/" className="font-black text-xl tracking-tight text-gray-900 flex-shrink-0">
-          Cap<span className="text-indigo-500">Oral</span>
-        </Link>
+      <div className="w-full px-8 py-4 flex items-center">
+        <div className="flex-1">
+          <Link href="/" className="font-black text-xl tracking-tight text-gray-900">
+            Cap<span className="text-indigo-500">Oral</span>
+          </Link>
+        </div>
         <nav className="flex items-center gap-1">
           {navItems.map((item) => {
             const active = pathname === item.href
@@ -38,7 +40,7 @@ export default function ParcoursNav() {
             )
           })}
         </nav>
-        <div className="flex justify-end gap-2">
+        <div className="flex-1 flex justify-end gap-2">
           <Link
             href="https://calendly.com/louiseh217"
             target="_blank"
