@@ -12,7 +12,7 @@ export default function MentionsLegalesPage() {
           <section>
             <h2 className="font-bold text-gray-900 mb-2">Éditeur du site</h2>
             <p>CapOral — Louise Heraud</p>
-            <p>Contact : <a href="mailto:louiseh217@gmail.com" className="text-indigo-500 hover:underline">louiseh217@gmail.com</a></p>
+            <p>Contact : <a href="mailto:caporalcoaching@gmail.com" className="text-indigo-500 hover:underline">caporalcoaching@gmail.com</a></p>
           </section>
 
           <section>
@@ -27,7 +27,7 @@ export default function MentionsLegalesPage() {
 
           <section>
             <h2 className="font-bold text-gray-900 mb-2">Données personnelles</h2>
-            <p>Les données collectées (email, mot de passe) sont utilisées uniquement pour accéder à votre espace personnel. Elles ne sont pas transmises à des tiers. Conformément au RGPD, vous pouvez demander la suppression de votre compte à tout moment en écrivant à <a href="mailto:louiseh217@gmail.com" className="text-indigo-500 hover:underline">louiseh217@gmail.com</a>.</p>
+            <p>Les données collectées (email, mot de passe) sont utilisées uniquement pour accéder à votre espace personnel. Elles ne sont pas transmises à des tiers. Conformément au RGPD, vous pouvez demander la suppression de votre compte à tout moment en écrivant à <a href="mailto:caporalcoaching@gmail.com" className="text-indigo-500 hover:underline">caporalcoaching@gmail.com</a>.</p>
           </section>
         </div>
 
