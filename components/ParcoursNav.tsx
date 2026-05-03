@@ -53,7 +53,7 @@ export default function ParcoursNav() {
             href="/espace"
             className="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-bold rounded-lg transition-colors whitespace-nowrap"
           >
-            Accéder à ton espace
+            Mon espace
           </Link>
         </div>
       </div>
