@@ -42,11 +42,11 @@ export const parcoursList: Parcours[] = [
     services: [
       {
         title: 'Dossier — CV & Lettre de motivation',
-        description: 'Travail sur votre CV et votre lettre de motivation : structure, contenu, formulation. Un dossier qui reflète votre profil.',
+        description: 'Travail sur votre CV et votre lettre de motivation : structure, contenu, formulation. Un dossier adapté aux attentes de chaque école.',
       },
       {
         title: 'Préparation aux oraux',
-        description: 'Structure et travail du pitch, entraînement sur les questions classiques et de niche, simulation en conditions réelles, feedback.',
+        description: 'Construction d'un pitch structuré, préparation aux questions types et de niche, entraînement en conditions réelles avec feedback.',
       },
     ],
     calendlyUrl: 'https://calendly.com/louiseh217/30min',
@@ -69,7 +69,7 @@ export const parcoursList: Parcours[] = [
     services: [
       {
         title: 'Préparation aux oraux',
-        description: 'Structure et travail du pitch, entraînement sur les questions classiques et de niche, simulation en conditions réelles, feedback.',
+        description: 'Construction d'un pitch structuré, préparation aux questions types et de niche, entraînement en conditions réelles avec feedback.',
       },
       {
         title: 'Dossiers spécifiques',
@@ -96,11 +96,11 @@ export const parcoursList: Parcours[] = [
     services: [
       {
         title: 'Dossier — CV & Lettre de motivation',
-        description: 'Travail sur votre CV et votre lettre de motivation : structure, contenu, formulation. Un dossier qui reflète votre profil.',
+        description: 'Travail sur votre CV et votre lettre de motivation : structure, contenu, formulation. Un dossier adapté aux attentes de chaque école.',
       },
       {
         title: 'Préparation aux oraux',
-        description: 'Structure et travail du pitch, entraînement sur les questions classiques et de niche, simulation en conditions réelles, feedback.',
+        description: 'Construction d'un pitch structuré, préparation aux questions types et de niche, entraînement en conditions réelles avec feedback.',
       },
     ],
     calendlyUrl: 'https://calendly.com/louiseh217/30min',
