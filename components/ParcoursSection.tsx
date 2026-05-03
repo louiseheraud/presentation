@@ -6,23 +6,23 @@ export default function ParcoursSection({ parcours }: { parcours: Parcours }) {
     <div>
 
       {/* Hero */}
-      <section className="bg-indigo-600 text-white py-20 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-block bg-indigo-500 text-indigo-100 text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full mb-6">
+      <section className="py-20 px-6 text-center">
+        <div className="max-w-3xl mx-auto">
+          <div className="inline-block bg-indigo-50 text-indigo-600 text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full mb-6">
             {parcours.label}
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
             Réussissez vos oraux<br />
-            <span className="text-indigo-200">{parcours.label === 'Prépa' ? 'grandes écoles' : parcours.label === 'Post bac' ? 'post bac' : 'admissions parallèles'}</span>
+            <span className="text-indigo-500">{parcours.label === 'Prépa' ? 'grandes écoles' : parcours.label === 'Post bac' ? 'post bac' : 'admissions parallèles'}</span>
           </h1>
-          <p className="text-lg text-indigo-100 leading-relaxed max-w-2xl mx-auto mb-10">
+          <p className="text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto mb-10">
             {parcours.intro}
           </p>
           <Link
             href={parcours.calendlyUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-4 bg-white text-indigo-600 font-bold rounded-xl hover:bg-indigo-50 transition-colors text-base"
+            className="inline-block px-8 py-4 bg-indigo-500 hover:bg-indigo-600 text-white font-bold rounded-xl transition-colors text-base"
           >
             Réserver ma séance découverte →
           </Link>
