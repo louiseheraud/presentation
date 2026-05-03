@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-100 mt-16">
-      <div className="max-w-5xl mx-auto px-8 py-12 grid md:grid-cols-3 gap-10">
+      <div className="max-w-5xl mx-auto px-8 py-12 grid md:grid-cols-4 gap-10">
 
         {/* Logo + phrase */}
         <div>
@@ -15,28 +15,46 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Liens */}
+        {/* Navigation */}
         <div>
           <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Navigation</p>
-          <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+          <div className="flex flex-col gap-2">
             {[
               { label: 'Accueil', href: '/' },
               { label: 'Post bac', href: '/post-bac' },
               { label: 'Prépa', href: '/prepa' },
               { label: 'AST', href: '/ast' },
               { label: 'À propos', href: '/a-propos' },
-              { label: 'Réserver une séance', href: 'https://calendly.com/louiseh217' },
             ].map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                target={item.href.startsWith('http') ? '_blank' : undefined}
-                rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 className="text-sm text-gray-500 hover:text-indigo-500 transition-colors"
               >
                 {item.label}
               </Link>
             ))}
+          </div>
+        </div>
+
+        {/* Actions */}
+        <div>
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Mon compte</p>
+          <div className="flex flex-col gap-2">
+            <Link
+              href="https://calendly.com/louiseh217"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-500 hover:text-indigo-500 transition-colors"
+            >
+              Réserver une séance
+            </Link>
+            <Link
+              href="/espace"
+              className="text-sm text-gray-500 hover:text-indigo-500 transition-colors"
+            >
+              Mon espace
+            </Link>
           </div>
         </div>
 
