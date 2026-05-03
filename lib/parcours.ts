@@ -26,17 +26,23 @@ export const parcoursList: Parcours[] = [
     programs: [
       {
         label: 'Écoles de commerce post bac',
-        schools: ['IESEG', 'ESCA', 'KEDGE Bachelor', 'SKEMA Bachelor', 'Rennes SB Bachelor', 'Audencia Bachelor'],
+        schools: [
+          'IESEG', 'ESSCA', 'EM Normandie', 'Excelia', 'ESSEC Global BBA',
+          'SKEMA BBA', 'NEOMA Global BBA', 'emlyon Global BBA', 'KEDGE BBA',
+          'ESCE', 'EMLV', 'ESDES', 'IPAG', 'PSB Paris', 'EM Strasbourg',
+          'GEM BBA', 'EDC Paris', 'EBS Paris',
+        ],
+      },
+      {
+        label: 'Sciences Po & IEP',
+        schools: [
+          'Sciences Po Paris', 'IEP Bordeaux', 'IEP Lyon', 'IEP Grenoble',
+          'IEP Toulouse', 'IEP Lille', 'IEP Rennes', 'IEP Aix', 'IEP Strasbourg',
+        ],
       },
       {
         label: 'Programmes internationaux',
-        schools: [
-          'Double diplôme Angleterre (UCL, LSE, Warwick)',
-          'IE Madrid',
-          'McGill',
-          'Bocconi',
-          'Sciences Po',
-        ],
+        schools: ['UCL', 'LSE', 'Warwick', 'IE Madrid', 'Bocconi', 'McGill'],
       },
     ],
     services: [
