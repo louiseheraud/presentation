@@ -25,7 +25,7 @@ export default function AProposPage() {
           </div>
           <div className="flex flex-col gap-4 text-gray-600 leading-relaxed">
             <p>
-              Depuis <strong className="text-gray-900">plus de 5 ans</strong>, j'accompagne des étudiants dans leur préparation aux oraux et dossiers — post bac, prépa et admissions parallèles (AST). J'ai travaillé avec <strong className="text-gray-900">plus de 400 étudiants</strong>, avec un taux de réussite de <strong className="text-gray-900">95 %</strong>.
+              Depuis <strong className="text-gray-900">plus de 5 ans</strong>, j'accompagne des étudiants dans leur préparation aux oraux et dossiers — post bac, prépa et admissions parallèles (AST). J'ai travaillé avec <strong className="text-gray-900">plus de 280 étudiants</strong>, avec un taux de réussite de <strong className="text-gray-900">95 %</strong>.
             </p>
             <p>
               Ma méthode repose sur une préparation structurée et un coaching personnalisé : l'objectif est que chaque étudiant arrive à l'oral avec confiance.

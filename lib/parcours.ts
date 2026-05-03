@@ -92,11 +92,22 @@ export const parcoursList: Parcours[] = [
     programs: [
       {
         label: 'Grandes écoles de commerce',
-        schools: ['HEC', 'ESSEC', 'ESCP', 'EDHEC', 'emlyon', 'Audencia', 'GEM', 'ESCE', 'Excelia', 'Rennes SB', 'Kedge', 'TBS', '...'],
+        schools: [
+          'HEC', 'ESSEC', 'ESCP', 'EDHEC', 'emlyon',
+          'SKEMA', 'NEOMA', 'Audencia', 'GEM', 'KEDGE',
+          'TBS', 'Rennes SB', 'EM Strasbourg', 'IESEG', '...',
+        ],
+      },
+      {
+        label: 'Sciences Po & IEP',
+        schools: [
+          'Sciences Po Paris', 'IEP Bordeaux', 'IEP Lyon', 'IEP Grenoble',
+          'IEP Toulouse', 'IEP Lille', 'IEP Rennes', 'IEP Aix', 'IEP Strasbourg',
+        ],
       },
       {
         label: 'IAE',
-        schools: ['IAE Paris', 'IAE Lyon', 'IAE Bordeaux', 'IAE Strasbourg', 'IAE Nantes', '...'],
+        schools: ['IAE Paris', 'IAE Lyon', 'IAE Bordeaux', 'IAE Grenoble', 'IAE Nantes', 'IAE Toulouse', 'IAE Lille', '...'],
       },
     ],
     services: [
