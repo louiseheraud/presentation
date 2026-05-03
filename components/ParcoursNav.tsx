@@ -7,7 +7,7 @@ const navItems = [
   { label: 'Accueil', href: '/' },
   { label: 'Post bac', href: '/post-bac' },
   { label: 'Prépa', href: '/prepa' },
-  { label: 'Admissions parallèles', href: '/ast' },
+  { label: 'AST', href: '/ast' },
   { label: 'À propos', href: '/a-propos' },
 ]
 
@@ -51,9 +51,9 @@ export default function ParcoursNav() {
           </Link>
           <Link
             href="/espace"
-            className="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-bold rounded-lg transition-colors whitespace-nowrap"
+            className="text-sm text-gray-400 hover:text-indigo-500 transition-colors whitespace-nowrap px-2"
           >
-            Accéder à ton espace
+            Mon espace
           </Link>
         </div>
       </div>
