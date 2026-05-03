@@ -46,7 +46,7 @@ export const parcoursList: Parcours[] = [
       },
       {
         title: 'Préparation aux oraux',
-        description: 'Construction d'un pitch structuré, préparation aux questions types et de niche, entraînement en conditions réelles avec feedback.',
+        description: "Construction d'un pitch structuré, préparation aux questions types et de niche, entraînement en conditions réelles avec feedback.",
       },
     ],
     calendlyUrl: 'https://calendly.com/louiseh217/30min',
@@ -69,7 +69,7 @@ export const parcoursList: Parcours[] = [
     services: [
       {
         title: 'Préparation aux oraux',
-        description: 'Construction d'un pitch structuré, préparation aux questions types et de niche, entraînement en conditions réelles avec feedback.',
+        description: "Construction d'un pitch structuré, préparation aux questions types et de niche, entraînement en conditions réelles avec feedback.",
       },
       {
         title: 'Dossiers spécifiques',
@@ -100,7 +100,7 @@ export const parcoursList: Parcours[] = [
       },
       {
         title: 'Préparation aux oraux',
-        description: 'Construction d'un pitch structuré, préparation aux questions types et de niche, entraînement en conditions réelles avec feedback.',
+        description: "Construction d'un pitch structuré, préparation aux questions types et de niche, entraînement en conditions réelles avec feedback.",
       },
     ],
     calendlyUrl: 'https://calendly.com/louiseh217/30min',
