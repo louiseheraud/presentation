@@ -18,7 +18,7 @@ export default function Footer() {
         {/* Liens */}
         <div>
           <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Navigation</p>
-          <div className="flex flex-col gap-2">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-2">
             {[
               { label: 'Accueil', href: '/' },
               { label: 'Post bac', href: '/post-bac' },
