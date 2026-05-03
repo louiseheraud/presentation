@@ -40,12 +40,20 @@ export default function ParcoursNav() {
         </nav>
         <div className="flex justify-end gap-2">
           <Link
-            href="https://calendly.com/louiseh217"
+            href="https://calendly.com/louiseh217/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 bg-white border border-indigo-300 hover:bg-indigo-50 text-indigo-600 text-sm font-bold rounded-lg transition-colors whitespace-nowrap"
           >
-            Réserver une séance
+            Séance découverte
+          </Link>
+          <Link
+            href="https://calendly.com/louiseh217"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-bold rounded-lg transition-colors whitespace-nowrap"
+          >
+            Séance individuelle
           </Link>
           <Link
             href="/espace"
