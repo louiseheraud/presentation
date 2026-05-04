@@ -22,7 +22,7 @@ const whyItems = [
 const testimonials = [
   {
     name: 'Sophie',
-    school: 'EDHEC',
+    school: 'HEC',
     text: 'Grâce aux simulations d\'entretien, j\'ai intégré HEC dans les meilleures conditions. Le feedback était précis et vraiment utile.',
   },
   {
