@@ -63,7 +63,7 @@ export default function AProposPage() {
                 <p className="text-sm text-gray-600">Oraux, CV, lettre de motivation — chaque séance est adaptée à votre profil et à l'école visée.</p>
               </div>
               <div className="text-right flex-shrink-0">
-                <div className="text-2xl font-extrabold text-gray-900">50 €</div>
+                <div className="text-2xl font-extrabold text-gray-900">70 €</div>
                 <div className="text-xs text-gray-400">par heure</div>
               </div>
             </div>
