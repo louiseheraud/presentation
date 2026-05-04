@@ -25,10 +25,10 @@ export default function AProposPage() {
           </div>
           <div className="flex flex-col gap-4 text-gray-600 leading-relaxed">
             <p>
-              Après une classe préparatoire à Paris, j'ai intégré le <strong className="text-gray-900">triple diplôme international</strong> entre <strong className="text-gray-900">l'EDHEC</strong>, <strong className="text-gray-900">SKKU à Séoul</strong> et <strong className="text-gray-900">UC Berkeley</strong> aux États-Unis.
+              Après une classe préparatoire à Paris, j'ai intégré le <strong className="text-gray-900">triple diplôme international</strong> entre <strong className="text-gray-900">l'EDHEC</strong>, <strong className="text-gray-900">la SKKU</strong> à Séoul et <strong className="text-gray-900">UC Berkeley</strong> aux États-Unis.
             </p>
             <p>
-              Depuis <strong className="text-gray-900">plus de 5 ans</strong>, j'accompagne des étudiants dans leur préparation aux oraux et dossiers — post bac, prépa et admissions parallèles (AST). J'ai travaillé avec <strong className="text-gray-900">plus de 140 étudiants</strong>, avec un taux de réussite de <strong className="text-gray-900">95 %</strong>.
+              Depuis <strong className="text-gray-900">plus de 4 ans</strong>, j'accompagne des étudiants dans leur préparation aux oraux et dossiers — post bac, prépa et admissions parallèles (AST). J'ai travaillé avec <strong className="text-gray-900">plus de 140 étudiants</strong>, avec un taux de réussite de <strong className="text-gray-900">95 %</strong>.
             </p>
             <p>
               Ma méthode repose sur une préparation structurée et un coaching personnalisé : l'objectif est que chaque étudiant arrive à l'oral avec confiance.
